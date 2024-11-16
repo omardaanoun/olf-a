@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="/server.js"></script>
+</head>
+
+<body class="bg-dark text-light">
+
+    <div class="container py-4">
+        <div>
+            <h2 class="prayer-time-header">Prière</h2>
+            <p>L'heure de prière <span class="text-warning" id="city-name">Loading...</span></p>
+        </div>
+
+        <div class="next-prayer-card mt-3 fw-bolder position-relative">
+            <p>Il reste pour adhan :</p>
+            <h3 class="next-prayer-title" id="prayer-name">Loading...</h3>
+            <h4 id="remaining-time">remaining time...</h4>
+
+            <div class="d-flex justify-content-center align-items-center mt-3">
+
+                <button class="btn btn-link text-black me-2" id="prevDate" onclick="changeDate('-1')">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+
+                <div class="text-center">
+                    <p id="hijri-date" class="mb-0">06-05-1446</p>
+                    <p id="gregorian-date">08-11-2024</p>
+                </div>
+
+                <button class="btn btn-link text-black ms-2" id="nextDate" onclick="changeDate('1')">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!--
+        <div class="promo-card mt-3">
+            <div class="d-flex align-items-center">
+                <img src="/mosquee.jpeg" alt="Promo" class="" style="width: 25%; height: 100%; margin-right: 10px;">
+                <div>
+                    <p>iloveYO</p>
+                    <p class="small">L'expérience Yo!</p>
+                    <span class="promo-price">25.00 DH</span>
+                </div>
+                <div class="ms-auto">
+                    <a href="#" class="text-warning">Découvrir</a>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <div class="prayer-times-grid mt-3 text-center">
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Fajr</span><br>
+                <span id="fajr-time">06:26</span>
+            </div>
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Chourouq</span><br>
+                <span id="chourouq-time">07:56</span>
+            </div>
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Dhuhr</span><br>
+                <span id="dhuhr-time">13:19</span>
+            </div>
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Asr</span><br>
+                <span id="asr-time">16:12</span>
+            </div>
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Maghrib</span><br>
+                <span id="maghrib-time">18:37</span>
+            </div>
+            <div class="prayer-time-box">
+                <svg role="img" viewBox="0 0 24 24" style="width: 35px; height: 35px;" class="rounded-circle"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Sunrise</title>
+                    <path
+                        d="M12.0011 0A12 12 0 1 0 24 11.9989 12.0114 12.0114 0 0 0 12.0012 0m0 2.4639a9.53 9.53 0 0 1 9.5134 8.8891 9.53 9.53 0 0 1-.8622 4.6487H3.349a9.53 9.53 0 0 1 .6162-9.14 9.53 9.53 0 0 1 8.036-4.398" />
+                </svg>
+                <br>
+                <span>Isha</span><br>
+                <span id="ishaa-time">19:56</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+.prayer-time-header {
+    color: white;
+    font-weight: bold;
+}
+
+.next-prayer-card {
+    background-image: url('/sky.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.next-prayer-title {
+    font-size: 1.5em;
+    color: #ff7300;
+    font-weight: bold;
+}
+
+.promo-card {
+    background: black;
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.promo-price {
+    color: #ff7300;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.prayer-times-grid {
+    background-color: #E4E4E4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.prayer-time-box {
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.prayer-time-selected {
+    border: 2px solid #ff7300;
+}
